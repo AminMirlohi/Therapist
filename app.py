@@ -51,7 +51,7 @@ def index():
             body = "This is a conversation between Ashley and a therapist named John.\nJohn: Hi Ashley, great to see you again.\Ashley:"+content1[index].replace("CLIENT:","")+"\nJohn:"+content2[index].replace("THERAPIST:","")+"\nAshley:"+body+"\nJohn:"
         answer = retrieve_input(body)
         answer = answer.rstrip().lstrip()
-        answer = answer.replace("Nick",request.form.get('name'))
+        answer = answer.replace("Ashley",request.form.get('name'))
         data_final={}
         # data_final['answer1']=clean_response_response
         data_final['answer']=answer
