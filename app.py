@@ -33,9 +33,9 @@ def retrieve_input(answer2):
 def index():
     if request.method == "POST":
         with open("client.txt", 'r')as f1:
-            content1 = f1.readlines
+            content1 = f1.readlines()
         with open("therapist.txt", 'r')as f2:
-            content2 = f2.readlines
+            content2 = f2.readlines()
         body = request.form.get('text')
         index = -1
         for i in range(len(content1)):
