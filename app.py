@@ -38,10 +38,13 @@ def index():
             content2 = f2.readlines()
         body = request.form.get('text')
         index = -1
-        for i in range(len(content1)):
-            if (SequenceMatcher(None, content1[i], body).ratio())>0.9:
-                index = i
-                break
+        try:
+            for i in range(len(content1)):
+                if (SequenceMatcher(None, content1[i], body).ratio())>0.9:
+                    index = i
+                    break
+        except:
+            pass
         if index == -1:
             body = "This is a conversation between Ashley and a therapist named John.\nJohn: Hi Nick, great to see you again.\Ashley:"+body+"\nJohn:"
         else:
