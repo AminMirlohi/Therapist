@@ -24,7 +24,7 @@ def retrieve_input(answer2):
         top_p=1,
         frequency_penalty=0.0,
         presence_penalty=0.0,
-        stop=["Nick:"]
+        stop=["Ashley:"]
             )
     return(response["choices"][0]["text"])
 
@@ -46,7 +46,7 @@ def index():
         except:
             pass
         if index == -1:
-            body = "This is a conversation between Ashley and a therapist named John.\nJohn: Hi Nick, great to see you again.\Ashley:"+body+"\nJohn:"
+            body = "This is a conversation between Ashley and a therapist named John.\nJohn: Hi Ashley, great to see you again.\Ashley:"+body+"\nJohn:"
         else:
             body = "This is a conversation between Ashley and a therapist named John.\nJohn: Hi Ashley, great to see you again.\Ashley:"+content1[index].replace("CLIENT:","")+"\nJohn:"+content2[index].replace("THERAPIST:","")+"\nAshley:"+body+"\nJohn:"
         answer = retrieve_input(body)
